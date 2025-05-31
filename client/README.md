@@ -1,70 +1,155 @@
-# Getting Started with Create React App
+# Zbytkář - PWA Aplikace
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Progressive Web App pro snížení plýtvání potravinami pomocí generování receptů z dostupných ingrediencí.
 
-## Available Scripts
+## 🎯 Funkcionalita
 
-In the project directory, you can run:
+### Klíčové vlastnosti
+- **Generování receptů** z dostupných ingrediencí
+- **Interaktivní průvodce vařením** s časovači
+- **Správa spíže** s CRUD operacemi
+- **Nákupní seznam** pro chybějící ingredience
+- **Filtrování receptů** podle tagů
+- **Responzivní design** (Mobile-first PWA)
 
-### `npm start`
+### Route List
+1. **`/` (Home)** - Generátor receptů s ingredient selectorem
+2. **`/recipe/:id`** - Detail receptu s dostupnými/chybějícími ingrediencemi
+3. **`/cooking/:id`** - Interaktivní vaření s kroky a progress barem
+4. **`/pantry`** - Správa spíže s CRUD operacemi
+5. **`/recipes`** - Filtrování receptů podle tagů
+6. **`/shopping`** - Nákupní seznam s chybějícími ingrediencemi
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Spuštění projektu
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Předpoklady
+- Node.js 16+
+- npm nebo yarn
 
-### `npm test`
+### Instalace
+```bash
+# Klonování repository
+git clone https://github.com/filipheda/project.git
+cd project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Instalace závislostí
+npm install
 
-### `npm run build`
+# Spuštění dev serveru
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Aplikace poběží na `http://localhost:3000`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Build pro produkci
+```bash
+npm run build
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📱 Technologie
 
-### `npm run eject`
+- **React 18** - UI framework
+- **JavaScript** - Hlavní programovací jazyk
+- **Tailwind CSS** - Utility-first CSS framework
+- **Lucide React** - Ikony
+- **Create React App** - Build nástroj
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🎨 Design System
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Barvy
+- **Primary**: Green (#16a34a)
+- **Secondary**: Blue (#3b82f6)
+- **Success**: Green (#22c55e)
+- **Warning**: Yellow (#f59e0b)
+- **Error**: Red (#ef4444)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Komponenty
+- **Header** - Navigační hlavička
+- **BottomNav** - Mobilní spodní navigace
+- **RecipeCard** - Karta receptu
+- **IngredientList** - Seznam ingrediencí
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📦 Struktura projektu
 
-## Learn More
+```
+src/
+├── components/          # Znovupoužitelné komponenty
+│   ├── Header.js       # Navigační hlavička
+│   ├── BottomNav.js    # Mobilní navigace
+│   ├── RecipeCard.js   # Karta receptu
+│   └── IngredientList.js # Seznam ingrediencí
+├── pages/              # Stránky aplikace
+│   ├── Home.js         # Hlavní generátor
+│   ├── RecipeDetail.js # Detail receptu
+│   ├── CookingMode.js  # Interaktivní vaření
+│   ├── PantryManagement.js # Správa spíže
+│   ├── RecipeFiltering.js # Filtrování receptů
+│   └── ShoppingList.js # Nákupní seznam
+├── utils/              # Pomocné funkce
+│   └── mockData.js     # Mock data
+├── App.js              # Hlavní aplikace
+├── index.js            # Entry point
+└── index.css           # Globální styly
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔧 Vývoj
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Přidání nové stránky
+1. Vytvoř nový soubor v `src/pages/`
+2. Exportuj komponentu v `src/pages/index.js`
+3. Přidej route do `App.js`
 
-### Code Splitting
+### Přidání nového komponentu
+1. Vytvoř nový soubor v `src/components/`
+2. Exportuj komponentu v `src/components/index.js`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Mock Data
+Všechna testovací data jsou v `src/utils/mockData.js`
 
-### Analyzing the Bundle Size
+## 📋 Business Cases
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Implementované podle dokumentace:
 
-### Making a Progressive Web App
+1. **✅ Generování receptů z dostupných ingrediencí**
+   - Uživatel vybere dostupné ingredience
+   - Systém vygeneruje recepty s % match
+   - Zobrazení dostupných vs. chybějících ingrediencí
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. **✅ Přidání chybějících ingrediencí na nákupní seznam**
+   - Detail receptu ukazuje co chybí
+   - Tlačítko pro přidání na nákupní seznam
+   - Automatické přidání missing ingrediencí
 
-### Advanced Configuration
+3. **✅ Interaktivní průvodce vařením**
+   - Step-by-step kroky s progress barem
+   - Integrované časovače pro každý krok
+   - Tipy a potřebné ingredience
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. **✅ Filtrování receptů podle tagů**
+   - Aktivní filtry s možností odstranění
+   - Kategorie tagů (jídlo, dieta, čas)
+   - Vyhledávání podle názvu
 
-### Deployment
+5. **✅ Aktualizace spíže uživatele**
+   - CRUD operace s ingrediencemi
+   - Kategorizace a vyhledávání
+   - Doporučený nákup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🌟 PWA vlastnosti
 
-### `npm run build` fails to minify
+- **Responzivní design** - Mobile-first přístup
+- **Touch-friendly** - Optimalizováno pro dotyková zařízení
+- **Offline-ready struktura** - Připraveno pro service worker
+- **App-like navigation** - Nativní feel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📝 Licence
+
+MIT License
+
+## 👥 Autoři
+
+- Filip Heda - Hlavní vývojář
+
+---
+
+**Zbytkář** - Méně plýtvání, více kreativního vaření! 🍳✨
