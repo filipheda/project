@@ -30,7 +30,7 @@ export const BottomNav = ({ currentRoute, navigate }) => {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:hidden z-50">
+     <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:hidden z-50">
       <div className="flex justify-around py-2">
         {navItems.map(({ path, icon: Icon, label, active }) => (
           <button
